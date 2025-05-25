@@ -104,20 +104,28 @@ Order is completed
 User logs out
 
 📁 Folder Structure
-.
-├── base/                # Abstract test setup (Abstraction)
-│   └── BaseTest.java
+SauceDemoCucumber
 │
-├── pages/               # Page Object classes (Encapsulation, Inheritance)
-│   ├── LoginPage.java
-│   ├── HomePage.java
-│   └── CartPage.java
+├── src/test/java
+│ ├── pages/ # Page Object Model classes
+│ │ ├── BasePage.java # Inheritance & Abstraction
+│ │ ├── LoginPage.java # Encapsulation
+│ │ ├── CartPage.java
+│ │ ├── ProductPage.java
+│ │ └── LogoutPage.java
+│ │
+│ ├── stepDefinitions/ # Step Definitions
+│ │ └── Steps.java # Gherkin to Java glue
+│ │
+│ └── runner/
+│ └── TestRunner.java # Cucumber test runner
 │
-├── utils/               # Utility classes (Abstraction)
-│   └── DriverManager.java
+├── src/test/resources/
+│ └── features/
+│ └── sauce.feature # Gherkin feature file
 │
-└── tests/               # Test logic
-    └── TestSauceDemo.java
+├── pom.xml # Maven dependencies and plugins
+└── cucumber.html # Cucumber HTML Report
 ▶️ How to Run
 Clone the repository
 
@@ -129,7 +137,7 @@ Open in IntelliJ/Eclipse
 Run the tests
 
 
-Right-click on TestSauceDemo.java -> Run
+Right-click on TestRunner.java -> Run
 
 🏁 Summary Table
 OOP Principle	Applied In	Purpose
